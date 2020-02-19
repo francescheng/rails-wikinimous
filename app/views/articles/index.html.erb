@@ -1,0 +1,15 @@
+<h1>Articles</h1>
+
+<div class="card-container">
+  <p><% @articles.each do |article| %></p>
+    <div class="d-flex p-2 align-content-center card">
+    <p><i class="fas fa-check-square mr-3"></i><%= link_to article.title, article_path(article) %>: <%= article.content %></p>
+    </div>
+  <% end %>
+
+  <div class="d-flex p-2 card">
+    <%= link_to new_article_path do %>
+      <p><i class="fa fa-plus mr-3" aria-hidden="true"></i> Add a new article</p>
+    <% end %>
+  </div>
+</div>
